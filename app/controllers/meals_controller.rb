@@ -23,8 +23,10 @@ class MealsController < ApplicationController
   def update
     @meal = Meal.find(params[:id])
     if @meal.update(meal_params)
-      flash[:notice] = "The item has been updated"
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js    
+      end
     else
       flash[:alert] = "The item has NOT been updated"
       render :edit
@@ -34,8 +36,10 @@ class MealsController < ApplicationController
 def destroy
   @meal = Meal.find(params[:id])
   @meal.destroy
-  flash[:notice] = "The item has been removed"
-  redirect_to root_path
+  respond_to do |format|
+    format.html { redirect_to root_path }
+    format.js
+  end
 end
 
   private
