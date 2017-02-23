@@ -1,9 +1,9 @@
 <%= render 'layouts/errors', object: @meal %>
 
-<%= form_for @meal do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name, class: 'form-control' %>
-<%= f.label :calories %>
-<%= f.text_field :calories, class: 'form-control' %>
-<%= f.submit class: 'btn btn-success' %>
+<%= form_for @meal, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.label :calories %>
+  <%= f.text_field :calories, class: 'form-control' %>
+  <%= f.submit class: 'btn btn-success' %>
 <% end %>

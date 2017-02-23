@@ -1,13 +1,17 @@
 <h1>Stay Fit</h1>
-<%= button_to "Add a meal", new_meal_path, :method => :get, class: "btn btn-info" %>
+<%= link_to "Add a meal", new_meal_path, class: "btn btn-info", id: "new_link", remote: true %>
+<div id="all_meals">
 
+</div>
 <% if @meals.any? %>
 <% @meals.each do |meal| %>
-<%= meal.name %><br>
-<%= meal.calories %><br>
-<%= link_to "Edit a meal", edit_meal_path(meal) %><br>
-<%= link_to "Delete Item", meal_path(meal),  :data => { :confirm => "Are you sure?", :method => 'delete' } %>
-<% end %>
+<div id="meal_link_<%=meal.id%>">
+  <%= meal.name %><br>
+  <%= meal.calories %><br>
+  <%= link_to "Edit a meal", edit_meal_path(meal) %><br>
+  <%= link_to "Delete Item", meal_path(meal),  :data => { :confirm => "Are you sure?", :method => 'delete' } %>
+</div>
+  <% end %>
 <% else %>
 <p>
   Currently there are no meal logs. Add one <%= link_to "here", new_meal_path %>

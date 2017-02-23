@@ -6,8 +6,10 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     if @meal.save
-      flash[:notice] = "Meal has been logged!"
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+    end
     else
       flash[:alert] = "Oops something went wrong, please try again."
       render :new
