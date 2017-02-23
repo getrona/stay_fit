@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/stay-fit/spec/models/meal_spec.rb": [
+      "/Users/Guest/Desktop/stay-fit/spec/models/exercise_spec.rb": [
         1,
         null,
         1,
@@ -611,6 +611,19 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/stay-fit/app/models/exercise.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/stay-fit/spec/models/meal_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/stay-fit/app/models/meal.rb": [
         1,
         1,
@@ -618,6 +631,6 @@
         null
       ]
     },
-    "timestamp": 1487870806
+    "timestamp": 1487871216
   }
 }
