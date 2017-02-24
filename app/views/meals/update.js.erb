@@ -1,6 +1,5 @@
 $('form').remove();
 $('#meal_link_<%=@meal.id%>').remove();
 $('#edit_link_<%=@meal.id%>').show();
-$('#edit_link').show();
 
-$('#all_meals').append('<div id="meal_link_<%=@meal.id%>"><%= @meal.name %><br><%= @meal.calories %><br><%= link_to "Edit a meal", edit_meal_path(@meal) %><br><%= link_to "Delete Item", meal_path(@meal),  :data => { :confirm => "Are you sure?", :method => "delete" } %></div>');
+$('#all_meals').prepend('<div id="meal_link_<%=@meal.id%>"><%= @meal.name %><br><%= @meal.calories %><br><%= link_to "Edit a meal", edit_meal_path(@meal) %><br><%= link_to "Delete Item", meal_path(@meal),  :data => { :confirm => "Are you sure?", :method => "delete" } %></div>');

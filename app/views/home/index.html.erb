@@ -8,7 +8,7 @@
 <div id="meal_link_<%=meal.id%>">
   <%= meal.name %><br>
   <%= meal.calories %><br>
-  <%= link_to "Edit a meal", edit_meal_path(meal), remote: true, id: "edit_link" %><br>
+  <%= link_to "Edit a meal", edit_meal_path(meal), remote: true, id: "edit_link_#{meal.id}" %><br>
   <%= link_to "Delete Item", meal_path(meal),  :data => { :confirm => "Are you sure?", :method => 'delete' }, remote: true %>
 </div>
 <% end %>
